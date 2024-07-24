@@ -4,13 +4,13 @@ export class ProductPage {
   readonly page: Page;
 
   readonly breadcrumbNavigation: Locator;
-  readonly getAddInform: Locator;
+  readonly getDescription: Locator;
 
   constructor(page: Page) {
     this.page = page;
    
     this.breadcrumbNavigation = page.locator("//nav[@class='woocommerce-breadcrumb']");
-    this.getAddInform = page.locator("//li[@id='tab-title-additional_information']");
+    this.getDescription = page.locator("//li[@id='tab-title-additional_information']");
 }
 
 async getBreadcrumbLabelText() {
@@ -18,6 +18,6 @@ async getBreadcrumbLabelText() {
   }
 
   async clickAddInform() {
-    await this.getAddInform.click();
+    await this.getDescription.click();
   }
 }

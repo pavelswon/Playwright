@@ -9,13 +9,13 @@ test('Vagar', async ({ page }) => {
     const productPage = new ProductPage(page);
 
     await vagarPage.goto();
-    await vagarPage.hoverTopMenu();
-    await vagarPage.clickSubMenu();
-    await categoryPage.clickgetPage2();
-    await categoryPage.clickgetProduct();
+    await vagarPage.topMenu.hover();
+    await vagarPage.subMenu.first().click();
+    await categoryPage.getPage2.click();
+    await categoryPage.getProduct.click();
 
     const breadcrumbText = await productPage.getBreadcrumbLabelText();
     expect(breadcrumbText).toContain('Кранові ваги ВК ЗЕВС ІІ-1000');
 
-    await productPage.clickAddInform();
+    await productPage.getDescription.click();
 });
